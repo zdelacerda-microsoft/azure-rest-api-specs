@@ -28,19 +28,28 @@ These are the global settings for the Virtual Machine Image Builder API.
 title: ImageBuilderClient
 description: Azure Virtual Machine Image Builder Client
 openapi-type: arm
-tag: package-2020-02
+tag: package-preview-2021-10
 azure-arm: true
 ```
 
 
+### Tag: package-preview-2021-10
+
+These settings apply only when `--tag=package-preview-2021-10` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2021-10'
+input-file:
+  - Microsoft.VirtualMachineImages/preview/2021-10-01/imagebuilder.json
+```
 ### Tag: package-2020-02
 
 These settings apply only when `--tag=package-2020-02` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-02'
+``` yaml $(tag) == 'package-2020-02'
 input-file:
   - Microsoft.VirtualMachineImages/stable/2020-02-14/imagebuilder.json
 ```
+
 ### Tag: package-preview-2019-05
 
 These settings apply only when `--tag=package-preview-2019-05` is specified on the command line.
@@ -140,6 +149,3 @@ java:
 regenerate-manager: true
 generate-interface: true
 ```
-
-
-
